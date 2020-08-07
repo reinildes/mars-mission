@@ -2,6 +2,9 @@ package terraformars;
 
 import terraformars.directions.ProbeDirection;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Probe {
     public static final char LEFT = 'L';
     public static final char RIGHT = 'R';
@@ -17,17 +20,22 @@ public class Probe {
     }
 
     public void executeCommands() {
+        commandsAsList()
+                .forEach(this::applyCommand);
+    }
 
-        for (char command : commands.toCharArray()) {
-
-            if (LEFT == command) {
-                probeDirection = probeDirection.turnLeft();
-            } else if (RIGHT == command) {
-                probeDirection = probeDirection.turnRight();
-            } else if (MOVE == command) {
-                point = probeDirection.move(point);
-            }
+    private void applyCommand(String command) {
+        if ("L".equals(command)) {
+            this.probeDirection = probeDirection.turnLeft();
+        } else if ("R".equals(command)) {
+            this.probeDirection = probeDirection.turnRight();
+        } else if ("M".equals(command)) {
+            this.point = probeDirection.move(point);
         }
+    }
+
+    private List<String> commandsAsList() {
+        return Arrays.asList(commands.split(""));
     }
 
     @Override
