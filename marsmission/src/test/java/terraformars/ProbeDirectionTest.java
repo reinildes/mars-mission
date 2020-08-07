@@ -76,4 +76,12 @@ public class ProbeDirectionTest {
         assertThat(pointAfterMoving, is(new Point(1, 0)));
     }
 
+    @Test
+    public void southMoveDownYAxis() {
+        ProbeDirection south = new SouthDirection();
+
+        Point pointAfterMoving = south.move(new Point(0, 0));
+
+        assertThat(pointAfterMoving, is(new Point(0, -1)));
+    }
 }
