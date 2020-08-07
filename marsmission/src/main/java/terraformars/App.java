@@ -5,36 +5,43 @@ import terraformars.directions.ProbeDirection;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner scanner;
     public static void main( String[] args ) {
 
-        createProbeWithInput();
+        scanner = new Scanner(System.in);
+        scanner.nextLine();
+
+        final var probeA = createProbeWithInput();
+        System.out.println(probeA);
+
+        final var probeB = createProbeWithInput();
+        System.out.println(probeB);
 
 
     }
 
-    private static void createProbeWithInput() {
-        var scanner = new Scanner(System.in);
-
-        scanner.nextLine();
+    private static Probe createProbeWithInput() {
 
         final var x = scanner.nextInt();
         final var y = scanner.nextInt();
 
         final var point = new Point(x, y);
 
-        System.out.println(point);
-
         final var directionName = scanner.next();
         final var probeDirection = ProbeDirection.create(directionName);
 
-        System.out.println(probeDirection);
+        final var commands = scanner.next();
+
+        return new Probe(probeDirection, point);
     }
 
     public static class Probe {
         public final ProbeDirection probeState;
+        private Point point;
 
-        public Probe(ProbeDirection probeState) {
+        public Probe(ProbeDirection probeState, Point point) {
             this.probeState = probeState;
+            this.point = point;
         }
     }
 }
