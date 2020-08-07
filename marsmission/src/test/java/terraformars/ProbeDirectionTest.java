@@ -67,4 +67,13 @@ public class ProbeDirectionTest {
         assertThat(pointAfterMoving, is(new Point(0, 1)));
     }
 
+    @Test
+    public void eastMoveRightXAxis() {
+        ProbeDirection east = new EastDirection();
+
+        Point pointAfterMoving = east.move(new Point(0, 0));
+
+        assertThat(pointAfterMoving, is(new Point(1, 0)));
+    }
+
 }
