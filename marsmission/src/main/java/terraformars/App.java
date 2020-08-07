@@ -16,14 +16,14 @@ public class App {
             scanner = new Scanner(System.in);
             scanner.nextLine();
 
-            final var probeA = createProbeWithInput();
-            final var probeB = createProbeWithInput();
+            final var voyager = createProbeWithInput();
+            final var curiosity = createProbeWithInput();
 
-            probeA.executeCommands();
-            probeB.executeCommands();
+            voyager.executeCommands();
+            curiosity.executeCommands();
 
-            System.out.println(probeA.getPosition());
-            System.out.println(probeB.getPosition());
+            System.out.println(voyager.getPosition());
+            System.out.println(curiosity.getPosition());
 
         } finally {
             scanner.close();
