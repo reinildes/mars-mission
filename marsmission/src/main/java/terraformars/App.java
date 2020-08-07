@@ -6,9 +6,9 @@ public class App {
     }
 
     public static class Probe {
-        public final ProbePosition probeState;
+        public final ProbeDirection probeState;
 
-        public Probe(ProbePosition probeState) {
+        public Probe(ProbeDirection probeState) {
             this.probeState = probeState;
         }
     }
