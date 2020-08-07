@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Probe {
-    public static final char LEFT = 'L';
-    public static final char RIGHT = 'R';
-    public static final char MOVE = 'M';
+    public static final String LEFT = "L";
+    public static final String RIGHT = "R";
+    public static final String MOVE = "M";
     private ProbeDirection probeDirection;
     private Point point;
     private String commands;
@@ -25,12 +25,18 @@ public class Probe {
     }
 
     private void applyCommand(String command) {
-        if ("L".equals(command)) {
+
+        if (LEFT.equals(command)) {
             this.probeDirection = probeDirection.turnLeft();
-        } else if ("R".equals(command)) {
+
+        } else if (RIGHT.equals(command)) {
             this.probeDirection = probeDirection.turnRight();
-        } else if ("M".equals(command)) {
+
+        } else if (MOVE.equals(command)) {
             this.point = probeDirection.move(point);
+
+        } else{
+            throw new RuntimeException( command + " is not valid. Please inform a valid command.");
         }
     }
 
