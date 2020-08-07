@@ -10,19 +10,24 @@ public class App {
 
     public static void main( String[] args ) {
 
-        System.out.println("Running...Please provide your input!");
+        System.out.println("Running... Please provide your input!");
 
-        scanner = new Scanner(System.in);
-        scanner.nextLine();
+        try {
+            scanner = new Scanner(System.in);
+            scanner.nextLine();
 
-        final var probeA = createProbeWithInput();
-        final var probeB = createProbeWithInput();
+            final var probeA = createProbeWithInput();
+            final var probeB = createProbeWithInput();
 
-        probeA.executeCommands();
-        probeB.executeCommands();
+            probeA.executeCommands();
+            probeB.executeCommands();
 
-        System.out.println(probeA.getPosition());
-        System.out.println(probeB.getPosition());
+            System.out.println(probeA.getPosition());
+            System.out.println(probeB.getPosition());
+
+        } finally {
+            scanner.close();
+        }
     }
 
     private static Probe createProbeWithInput() {
