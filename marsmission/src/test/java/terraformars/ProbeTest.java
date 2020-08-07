@@ -4,8 +4,7 @@ import org.junit.Test;
 import terraformars.directions.ProbeDirection;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ProbeTest {
 
@@ -35,5 +34,16 @@ public class ProbeTest {
         final var probe = new Probe(ProbeDirection.create("E"), new Point(1000, 1000), "LLMRLMRLRRLLMMLMRLMRMLRMLRMLRMLRMLLMMRRLM");
         probe.executeCommands();
         assertThat(probe.getPosition(), is("993 997 S"));
+    }
+
+    @Test
+    public void probeThrowsExceptionWithInvalidCommand() {
+        final var probe = new Probe(ProbeDirection.create("E"), new Point(0, 0), "T");
+        try {
+            probe.executeCommands();
+            fail("Should not have reached this point");
+        } catch (RuntimeException e) {
+            assertThat(e.getMessage(), is("T is not valid. Please inform a valid command."));
+        }
     }
 }
