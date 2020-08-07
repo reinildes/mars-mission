@@ -7,6 +7,12 @@ import java.util.Scanner;
 public class App {
     public static void main( String[] args ) {
 
+        createProbeWithInput();
+
+
+    }
+
+    private static void createProbeWithInput() {
         var scanner = new Scanner(System.in);
 
         scanner.nextLine();
@@ -22,8 +28,6 @@ public class App {
         final var probeDirection = ProbeDirection.create(directionName);
 
         System.out.println(probeDirection);
-
-
     }
 
     public static class Probe {
