@@ -2,7 +2,7 @@ package terraformars.directions;
 
 import terraformars.Point;
 
-public class EastDirection implements ProbeDirection{
+public class EastDirection implements ProbeDirection {
     public ProbeDirection turnLeft() {
         return new NorthDirection();
     }
