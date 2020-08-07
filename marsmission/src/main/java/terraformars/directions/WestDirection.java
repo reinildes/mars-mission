@@ -14,4 +14,8 @@ public class WestDirection implements ProbeDirection{
     public Point move(Point point) {
         return new Point(point.x - 1, point.y);
     }
+
+    public String name() {
+        return "W";
+    }
 }

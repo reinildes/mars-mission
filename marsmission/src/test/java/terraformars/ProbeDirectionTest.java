@@ -93,4 +93,12 @@ public class ProbeDirectionTest {
 
         assertThat(pointAfterMoving, is(new Point(-1, 0)));
     }
+
+    @Test
+    public void directionNames() {
+        assertThat(new SouthDirection().name(), is("S"));
+        assertThat(new NorthDirection().name(), is("N"));
+        assertThat(new EastDirection().name(), is("E"));
+        assertThat(new WestDirection().name(), is("W"));
+    }
 }

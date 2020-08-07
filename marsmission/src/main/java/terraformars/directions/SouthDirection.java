@@ -14,4 +14,8 @@ public class SouthDirection implements ProbeDirection{
     public Point move(Point point) {
         return new Point(point.x, point.y - 1);
     }
+
+    public String name() {
+        return "S";
+    }
 }
