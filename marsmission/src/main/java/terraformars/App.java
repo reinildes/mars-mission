@@ -17,7 +17,6 @@ public class App {
         final var probeB = createProbeWithInput();
         System.out.println(probeB);
 
-
     }
 
     private static Probe createProbeWithInput() {
@@ -32,16 +31,23 @@ public class App {
 
         final var commands = scanner.next();
 
-        return new Probe(probeDirection, point);
+        return new Probe(probeDirection, point, commands);
     }
 
     public static class Probe {
         public final ProbeDirection probeState;
         private Point point;
+        private String commands;
 
-        public Probe(ProbeDirection probeState, Point point) {
+        public Probe(ProbeDirection probeState, Point point, String commands) {
             this.probeState = probeState;
             this.point = point;
+            this.commands = commands;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("(%s, %s, %s)", point, probeState.name(), commands);
         }
     }
 }
