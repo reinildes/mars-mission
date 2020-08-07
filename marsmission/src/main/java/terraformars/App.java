@@ -17,6 +17,8 @@ public class App {
         probeA.executeCommands();
         probeB.executeCommands();
 
+        System.out.println(probeA.getPosition());
+        System.out.println(probeB.getPosition());
     }
 
     private static Probe createProbeWithInput() {
