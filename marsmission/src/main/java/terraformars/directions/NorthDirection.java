@@ -12,6 +12,6 @@ public class NorthDirection implements ProbeDirection {
     }
 
     public Point move(Point point) {
-        return null;
+        return new Point(point.x, point.y + 1);
     }
 }
