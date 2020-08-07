@@ -33,6 +33,6 @@ public class Probe {
     }
 
     public String getPosition() {
-        return null;
+        return String.format("%s %s %s", point.x, point.y, probeDirection.name());
     }
 }
