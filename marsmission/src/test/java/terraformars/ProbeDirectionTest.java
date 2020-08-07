@@ -5,8 +5,7 @@ import terraformars.directions.*;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ProbeDirectionTest {
 
@@ -108,6 +107,13 @@ public class ProbeDirectionTest {
         assertThat(ProbeDirection.create("E"), instanceOf(EastDirection.class));
         assertThat(ProbeDirection.create("S"), instanceOf(SouthDirection.class));
         assertThat(ProbeDirection.create("W"), instanceOf(WestDirection.class));
+
+        try {
+            assertThat(ProbeDirection.create("Other"), instanceOf(WestDirection.class));
+            fail("Should not have reached this point");
+        } catch (RuntimeException e) {
+            assertThat(e.getMessage(), is("Other is not a valid Direction"));
+        }
     }
 
 }
