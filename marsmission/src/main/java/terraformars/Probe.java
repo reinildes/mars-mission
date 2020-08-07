@@ -3,6 +3,9 @@ package terraformars;
 import terraformars.directions.ProbeDirection;
 
 public class Probe {
+    public static final char LEFT = 'L';
+    public static final char RIGHT = 'R';
+    public static final char MOVE = 'M';
     private ProbeDirection probeDirection;
     private Point point;
     private String commands;
@@ -17,11 +20,11 @@ public class Probe {
 
         for (char command : commands.toCharArray()) {
 
-            if ('L' == command) {
+            if (LEFT == command) {
                 probeDirection = probeDirection.turnLeft();
-            } else if ('R' == command) {
+            } else if (RIGHT == command) {
                 probeDirection = probeDirection.turnRight();
-            } else if ('M' == command) {
+            } else if (MOVE == command) {
                 point = probeDirection.move(point);
             }
         }
