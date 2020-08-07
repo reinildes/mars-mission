@@ -11,7 +11,7 @@ public class SouthDirection implements ProbeDirection{
         return new EastDirection();
     }
 
-    public Point move() {
+    public Point move(Point point) {
         return null;
     }
 }

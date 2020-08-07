@@ -11,7 +11,7 @@ public class WestDirection implements ProbeDirection{
         return new NorthDirection();
     }
 
-    public Point move() {
+    public Point move(Point point) {
         return null;
     }
 }

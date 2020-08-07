@@ -4,6 +4,7 @@ import org.junit.Test;
 import terraformars.directions.*;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -57,6 +58,14 @@ public class ProbeDirectionTest {
         assertThat(west.turnLeft(), instanceOf(SouthDirection.class));
     }
 
+    @Test
+    public void northMoveUpYAxis() {
+        ProbeDirection north = new NorthDirection();
 
+        Point pointAferMoving = north.move(new Point(0, 0));
+
+        assertThat(pointAferMoving, is(new Point(0, 1)));
+
+    }
 
 }
