@@ -33,4 +33,16 @@ public class ProbeDirectionTest {
         assertThat(east.turnLeft(), instanceOf(NorthDirection.class));
     }
 
+    @Test
+    public void southTurnRightToEast() {
+        ProbeDirection east = new SouthDirection();
+        assertThat(east.turnRight(), instanceOf(SouthDirection.class));
+    }
+
+    @Test
+    public void southTurnLeftToWest() {
+        ProbeDirection east = new SouthDirection();
+        assertThat(east.turnLeft(), instanceOf(NorthDirection.class));
+    }
+
 }
