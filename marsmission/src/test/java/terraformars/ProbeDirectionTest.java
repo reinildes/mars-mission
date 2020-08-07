@@ -11,9 +11,13 @@ public class ProbeDirectionTest
 {
     @Test
     public void northTurnRightToEast() {
-
         ProbeDirection north = new NorthDirection();
+        assertThat(north.turnRight(), instanceOf(EastDirection.class));
+    }
 
-        assertThat(north, instanceOf(EastDirection.class));
+    @Test
+    public void northTurnLeftToEast() {
+        ProbeDirection north = new NorthDirection();
+        assertThat(north.turnLeft(), instanceOf(WestDirection.class));
     }
 }
