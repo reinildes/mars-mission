@@ -101,4 +101,13 @@ public class ProbeDirectionTest {
         assertThat(new EastDirection().name(), is("E"));
         assertThat(new WestDirection().name(), is("W"));
     }
+
+    @Test
+    public void createDirections() {
+        assertThat(ProbeDirection.create("N"), instanceOf(NorthDirection.class));
+        assertThat(ProbeDirection.create("E"), instanceOf(EastDirection.class));
+        assertThat(ProbeDirection.create("S"), instanceOf(SouthDirection.class));
+        assertThat(ProbeDirection.create("W"), instanceOf(WestDirection.class));
+    }
+
 }
