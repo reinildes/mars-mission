@@ -62,10 +62,9 @@ public class ProbeDirectionTest {
     public void northMoveUpYAxis() {
         ProbeDirection north = new NorthDirection();
 
-        Point pointAferMoving = north.move(new Point(0, 0));
+        Point pointAfterMoving = north.move(new Point(0, 0));
 
-        assertThat(pointAferMoving, is(new Point(0, 1)));
-
+        assertThat(pointAfterMoving, is(new Point(0, 1)));
     }
 
 }
