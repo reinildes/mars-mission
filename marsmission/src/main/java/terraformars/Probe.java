@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Probe {
-    public static final String LEFT = "L";
-    public static final String RIGHT = "R";
-    public static final String MOVE = "M";
+    private static final String LEFT = "L";
+    private static final String RIGHT = "R";
+    private static final String MOVE = "M";
     private ProbeDirection probeDirection;
     private Point point;
     private String commands;
