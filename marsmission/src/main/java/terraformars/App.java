@@ -10,7 +10,7 @@ public class App {
 
     public static void main( String[] args ) {
 
-        System.out.println("Running... Please provide your input!");
+        System.out.println("Running... Please provide your input via CLI!");
 
         try {
             scanner = new Scanner(System.in);
