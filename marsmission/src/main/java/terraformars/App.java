@@ -14,7 +14,7 @@ public class App {
 
         try {
             scanner = new Scanner(System.in);
-            scanner.nextLine();
+            scanner.nextLine(); // skips first line as solution can be achieved without it
 
             final var voyager = createProbeWithInput();
             final var curiosity = createProbeWithInput();
