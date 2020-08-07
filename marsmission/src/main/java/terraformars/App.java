@@ -5,7 +5,9 @@ import terraformars.directions.ProbeDirection;
 import java.util.Scanner;
 
 public class App {
+
     private static Scanner scanner;
+
     public static void main( String[] args ) {
 
         scanner = new Scanner(System.in);
@@ -35,5 +37,4 @@ public class App {
 
         return new Probe(probeDirection, point, commands);
     }
-
 }
