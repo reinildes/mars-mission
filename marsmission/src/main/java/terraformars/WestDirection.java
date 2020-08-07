@@ -2,11 +2,11 @@ package terraformars;
 
 public class WestDirection implements ProbeDirection{
     public ProbeDirection turnLeft() {
-        return null;
+        return new SouthDirection();
     }
 
     public ProbeDirection turnRight() {
-        return null;
+        return new NorthDirection();
     }
 
     public Point move() {
