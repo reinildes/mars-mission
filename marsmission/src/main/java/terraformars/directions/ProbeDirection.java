@@ -1,4 +1,6 @@
-package terraformars;
+package terraformars.directions;
+
+import terraformars.Point;
 
 public interface ProbeDirection {
     ProbeDirection turnLeft();

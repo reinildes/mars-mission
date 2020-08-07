@@ -1,4 +1,6 @@
-package terraformars;
+package terraformars.directions;
+
+import terraformars.Point;
 
 public class NorthDirection implements ProbeDirection {
     public ProbeDirection turnLeft() {

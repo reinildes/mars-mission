@@ -1,7 +1,7 @@
 package terraformars;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
+import terraformars.directions.*;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -56,5 +56,7 @@ public class ProbeDirectionTest {
         ProbeDirection west = new WestDirection();
         assertThat(west.turnLeft(), instanceOf(SouthDirection.class));
     }
+
+
 
 }
