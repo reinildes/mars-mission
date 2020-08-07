@@ -46,4 +46,19 @@ public class ProbeTest {
             assertThat(e.getMessage(), is("T is not valid. Please inform a valid command."));
         }
     }
+
+    @Test
+    public void whenRunning4LeftCommandsCirclesBackToOriginalDirection() {
+        final var probe = new Probe(ProbeDirection.create("E"), new Point(0, 0), "LLLL");
+        probe.executeCommands();
+        assertThat(probe.getPosition(), is("0 0 E"));
+    }
+
+
+    @Test
+    public void whenRunning4RightCommandsCirclesBackToOriginalDirection() {
+        final var probe = new Probe(ProbeDirection.create("N"), new Point(0, 0), "RRRR");
+        probe.executeCommands();
+        assertThat(probe.getPosition(), is("0 0 N"));
+    }
 }
