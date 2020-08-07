@@ -31,4 +31,8 @@ public class Probe {
     public String toString() {
         return String.format("(%s, %s, %s)", point, probeDirection.name(), commands);
     }
+
+    public String getPosition() {
+        return null;
+    }
 }
