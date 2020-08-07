@@ -12,10 +12,10 @@ public class App {
         scanner.nextLine();
 
         final var probeA = createProbeWithInput();
-        System.out.println(probeA);
-
         final var probeB = createProbeWithInput();
-        System.out.println(probeB);
+
+        probeA.executeCommands();
+        probeB.executeCommands();
 
     }
 
@@ -35,19 +35,33 @@ public class App {
     }
 
     public static class Probe {
-        public final ProbeDirection probeState;
+        private ProbeDirection probeDirection;
         private Point point;
         private String commands;
 
-        public Probe(ProbeDirection probeState, Point point, String commands) {
-            this.probeState = probeState;
+        public Probe(ProbeDirection direction, Point point, String commands) {
+            this.probeDirection = direction;
             this.point = point;
             this.commands = commands;
         }
 
+        public void executeCommands(){
+
+            for (char command : commands.toCharArray()) {
+
+                if ('L' == command){
+                    probeDirection = probeDirection.turnLeft();
+                } else if ('R' == command) {
+                    probeDirection = probeDirection.turnRight();
+                } else if ('M' == command) {
+                    point = probeDirection.move(point);
+                }
+            }
+        }
+
         @Override
         public String toString() {
-            return String.format("(%s, %s, %s)", point, probeState.name(), commands);
+            return String.format("(%s, %s, %s)", point, probeDirection.name(), commands);
         }
     }
 }
