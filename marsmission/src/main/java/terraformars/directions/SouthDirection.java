@@ -4,11 +4,11 @@ import terraformars.Point;
 
 public class SouthDirection implements ProbeDirection{
     public ProbeDirection turnLeft() {
-        return new WestDirection();
+        return new EastDirection();
     }
 
     public ProbeDirection turnRight() {
-        return new EastDirection();
+        return new WestDirection();
     }
 
     public Point move(Point point) {
