@@ -10,6 +10,8 @@ public class App {
 
     public static void main( String[] args ) {
 
+        System.out.println("Running...Please provide your input!");
+
         scanner = new Scanner(System.in);
         scanner.nextLine();
 
