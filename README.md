@@ -4,7 +4,7 @@
 ### How to run :
 
 ````
-git clone
+git clone git@github.com:reinildes/mars-mission.git
 cd mars-mission/marsmission/src/main/java/
 javac terraformars/App.java
 java terraformars.App

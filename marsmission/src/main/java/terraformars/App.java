@@ -22,6 +22,7 @@ public class App {
             voyager.executeCommands();
             curiosity.executeCommands();
 
+            System.out.println();
             System.out.println(voyager.getPosition());
             System.out.println(curiosity.getPosition());
 
