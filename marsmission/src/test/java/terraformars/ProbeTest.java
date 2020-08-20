@@ -16,6 +16,22 @@ public class ProbeTest {
     }
 
     @Test
+    public void probeMarksFlag() {
+        final var probe = new Probe(ProbeDirection.create("N"), new Point(1, 2), "LMFLMLMLMM");
+        probe.executeCommands();
+        assertThat(probe.getPosition(), is("1 3 N"));
+        assertThat(probe.getFlagPositions(), is("[(0, 2)]"));
+    }
+
+    @Test
+    public void probeMarksMultipleFlags() {
+        final var probe = new Probe(ProbeDirection.create("N"), new Point(1, 2), "LMFLMFLMLMM");
+        probe.executeCommands();
+        assertThat(probe.getPosition(), is("1 3 N"));
+        assertThat(probe.getFlagPositions(), is("[(0, 2), (0, 1)]"));
+    }
+
+    @Test
     public void probeExecutesCommandsB() {
         final var probe = new Probe(ProbeDirection.create("E"), new Point(3, 3), "MMRMMRMRRM");
         probe.executeCommands();

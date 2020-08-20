@@ -24,7 +24,9 @@ public class App {
 
             System.out.println();
             System.out.println(voyager.getPosition());
+            System.out.println(voyager.getFlagPositions());
             System.out.println(curiosity.getPosition());
+            System.out.println(curiosity.getFlagPositions());
 
         } finally {
             scanner.close();
